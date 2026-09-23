@@ -1,5 +1,6 @@
 import {LoginForm} from "./LoginForm.jsx";
 import {useState} from "react";
+import Pagee from "./Pagee.jsx";
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
       <div>
-        <LoginForm></LoginForm>
+        <Pagee></Pagee>
 
       </div>
   )

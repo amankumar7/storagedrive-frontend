@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+            radial-gradient(
+                    circle at top,
+                    #fff1f2,
+                    #ffe4e6 40%,
+                    #fecdd3 100%
+            );
+
+    transition: background 1s ease;
+}
+
+.page.revealed {
+    background:
+            radial-gradient(
+                    circle at center,
+                    #4c0519,
+                    #1f0010 60%,
+                    #09000a
+            );
+}
+
+/* Background */
+
+.background-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.5;
+
+    animation: float 6s ease-in-out infinite;
+}
+
+.glow-one {
+    background: #fb7185;
+
+    top: -100px;
+    left: -100px;
+}
+
+.glow-two {
+    background: #f472b6;
+
+    bottom: -100px;
+    right: -100px;
+
+    animation-delay: 2s;
+}
+
+/* Main content */
+
+.content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+/* Heart */
+
+.heart {
+    font-size: 70px;
+
+    animation:
+            heartbeat 1.5s infinite;
+
+    margin-bottom: 20px;
+}
+
+/* Heading */
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+
+    color: #881337;
+
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #e11d48;
+}
+
+/* Subtitle */
+
+.subtitle {
+    font-size: 18px;
+
+    color: #6b7280;
+
+    margin-bottom: 35px;
+}
+
+/* Button */
+
+.reveal-button {
+    border: none;
+
+    padding: 16px 32px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: white;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #e11d48,
+                    #be123c
+            );
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 10px 30px rgba(225, 29, 72, 0.35);
+
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+.reveal-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+            0 15px 40px rgba(225, 29, 72, 0.5);
+}
+
+.reveal-button:active {
+    transform: scale(0.97);
+}
+
+.reveal-button span {
+    margin: 0 8px;
+}
+
+/* Reveal */
+
+.reveal-content {
+    animation: reveal 1.2s ease forwards;
+}
+
+/* Image */
+
+.image-wrapper {
+    position: relative;
+
+    width: 330px;
+    height: 330px;
+
+    margin: auto;
+}
+
+.special-image {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+            0 0 40px rgba(244, 114, 182, 0.6),
+            0 0 100px rgba(225, 29, 72, 0.4);
+
+    animation:
+            imageAppear 1.2s ease,
+            imageFloat 4s ease-in-out infinite;
+}
+
+.image-glow {
+    position: absolute;
+
+    inset: -30px;
+
+    border-radius: 50%;
+
+    background: #fb7185;
+
+    filter: blur(50px);
+
+    opacity: 0.35;
+}
+
+/* Music */
+
+.music-icon {
+    font-size: 35px;
+
+    margin-top: 30px;
+
+    animation: musicBounce 1s infinite;
+}
+
+.message {
+    color: white;
+
+    font-size: 42px;
+
+    margin-top: 10px;
+}
+
+.message-text {
+    color: #fda4af;
+
+    font-size: 18px;
+
+    margin-top: 10px;
+}
+
+/* Music animation */
+
+.music-playing {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+
+    margin-top: 25px;
+}
+
+.music-playing span {
+    width: 4px;
+
+    height: 20px;
+
+    background: #fb7185;
+
+    border-radius: 5px;
+
+    animation: sound 0.8s infinite ease-in-out;
+}
+
+.music-playing span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.music-playing span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.music-playing span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.music-playing span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.music-playing label {
+    color: #fda4af;
+
+    margin-left: 10px;
+
+    font-size: 14px;
+}
+
+/* Animations */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes imageAppear {
+
+    from {
+        transform: scale(0) rotate(-20deg);
+    }
+
+    to {
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes imageFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes musicBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes sound {
+
+    0%,
+    100% {
+        height: 10px;
+    }
+
+    50% {
+        height: 28px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .image-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    .message {
+        font-size: 32px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+.back-button {
+    margin-top: 30px;
+
+    padding: 10px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+
+    transform: translateY(-2px);
+}
