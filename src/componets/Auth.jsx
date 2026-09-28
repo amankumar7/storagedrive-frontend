@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Auth.css"
+import folderIcon from "../assets/icons8-folder-96.png";
 
 export default function Auth() {
     const [isLogin, setIsLogin] = useState(false);
@@ -37,7 +38,7 @@ export default function Auth() {
                 <div className="auth-content">
                     <div className="brand">
                         <img
-                            src="src/assets/icons8-folder-96.png"
+                            src={folderIcon}
                             alt="App Logo"
                             className="brand-icon"
                         />
@@ -207,7 +208,7 @@ export default function Auth() {
                     <div className="visual-content">
 
                         <img
-                            src="src/assets/icons8-folder-96.png"
+                            src={folderIcon}
                             alt="Folder"
                             className="large-folder"
                         />
