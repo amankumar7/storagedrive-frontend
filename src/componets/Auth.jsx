@@ -26,9 +26,13 @@ export default function Auth() {
             console.log("Login", {
                 email: form.email,
                 password: form.password,
+
             });
+            alert("emal: "+form.email+ " password: "+ form.password);
+
         } else {
             console.log("Register", form);
+            alert("emal: "+form.email+ " username: "+ form.username + " password: "+ form.password);
         }
     };
 

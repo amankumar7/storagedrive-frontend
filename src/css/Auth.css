@@ -10,7 +10,7 @@ body {
             BlinkMacSystemFont,
             "Segoe UI",
             sans-serif;
-    overflow: hidden;
+    overflow-x: hidden; /* Changed from overflow: hidden to allow vertical scrolling on small screens */
 }
 
 /* =================================
@@ -18,7 +18,6 @@ body {
 ================================= */
 
 .auth-page {
-
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -32,14 +31,13 @@ body {
 
 .auth-container {
     width: min(930px, 95vw);
-    height: 600px;
+    min-height: 600px; /* Changed from fixed height to min-height */
     display: grid;
     grid-template-columns: 52% 48%;
     background: #fdfbf7;
     border-radius: 40px;
     overflow: hidden;
-    box-shadow:
-            0 25px 60px rgb(106 107 110 / 0.58);
+    box-shadow: 0 25px 60px rgb(106 107 110);
 }
 
 /* =================================
@@ -47,11 +45,11 @@ body {
 ================================= */
 
 .auth-content {
-    padding: 20px 50px; /* Reduced top/bottom padding slightly */
-    position:relative;
+    padding: 30px 50px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Keeps top header and bottom elements cleanly spaced */
+    justify-content: flex-start; /* Changed from space-between to avoid pushing content to boundaries */
     height: 100%;
 }
 
@@ -83,11 +81,10 @@ body {
 ================================= */
 
 .heading-section {
-    margin-top: 48px;
+    margin-top: 30px;
 }
 
 .eyebrow {
-
     color: #8c6d53;
     font-size: 11px;
     font-weight: 700;
@@ -97,14 +94,12 @@ body {
 }
 
 .heading-section h1 {
-
     margin: 0px;
     color: #2c1d11;
     font-size: 38px;
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: 0px;
-
 }
 
 .yellow-dot {
@@ -112,7 +107,6 @@ body {
 }
 
 .heading-section p {
-
     margin-top: 15px;
     color: #705845;
     font-size: 13px;
@@ -137,7 +131,6 @@ body {
     max-width: 450px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .field {
@@ -145,18 +138,16 @@ body {
 }
 
 .field label {
-
     display: block;
     color: #5c4433;
     font-size: 11px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     letter-spacing: 0.5px;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .input-container {
-
     height: 49px;
     display: flex;
     align-items: center;
@@ -221,8 +212,8 @@ body {
 .button-row {
     display: flex;
     gap: 12px;
-    margin-top: auto;
-    margin-bottom: 30px;
+    margin-top: 20px; /* Replaced margin-top: auto with explicit top margin */
+    margin-bottom: 20px;
 }
 
 .secondary-button,
@@ -237,7 +228,6 @@ body {
 }
 
 .secondary-button {
-
     border: 1px solid #caa88d;
     background: #eaddcb;
     color: #4a382a;
@@ -253,8 +243,7 @@ body {
     background: #d97706;
     color: #ffffff;
     flex: 1.2;
-    box-shadow:
-            0 8px 20px rgba(180, 83, 9, 0.25);
+    box-shadow: 0 8px 20px rgba(180, 83, 9, 0.25);
 }
 
 .primary-button:hover {
@@ -263,7 +252,6 @@ body {
 }
 
 .primary-button span {
-
     margin-left: 10px;
     font-size: 16px;
 }
@@ -275,12 +263,7 @@ body {
 .visual-section {
     position: relative;
     overflow: hidden;
-    background:
-            linear-gradient(
-                    135deg,
-                    rgb(215 118 6 / 0.5),
-                    #ffffff
-            );
+    background: linear-gradient(135deg, rgb(215 118 6 / 0.5), #ffffff);
 }
 
 .visual-section::before {
@@ -372,6 +355,8 @@ body {
     .auth-container {
         grid-template-columns: 1fr;
         max-width: 500px;
+        min-height: auto;
+        height: auto;
     }
 
     .visual-section {
@@ -379,11 +364,11 @@ body {
     }
 
     .auth-content {
-        padding: 40px;
+        padding: 30px;
     }
 
     .heading-section {
-        margin-top: 80px;
+        margin-top: 30px;
     }
 }
 
@@ -395,24 +380,26 @@ body {
 
     .auth-container {
         min-height: 100vh;
-
+        height: auto;
         border-radius: 0;
     }
 
     .auth-content {
-        padding: 35px 25px;
+        padding: 25px 20px;
     }
 
     .heading-section {
-        margin-top: 75px;
+        margin-top: 20px; /* Reduced from 75px to save vertical space */
     }
 
     .heading-section h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .button-row {
         flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
     }
 
     .secondary-button,
