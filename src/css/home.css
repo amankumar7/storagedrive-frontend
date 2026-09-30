@@ -1,0 +1,546 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+}
+
+.drive-page {
+    min-height: 100vh;
+
+    background: #1d1f2b;
+
+    color: #ffffff;
+}
+
+
+/* ============================
+   HEADER
+============================ */
+
+.drive-header {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 28px;
+
+    border-bottom: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+    background: rgba(29, 31, 43, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    gap: 30px;
+}
+
+
+/* Logo */
+
+.drive-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 190px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.drive-logo img {
+    width: 35px;
+    height: 35px;
+
+    object-fit: contain;
+}
+
+
+/* Search */
+
+.search-box {
+    flex: 1;
+
+    max-width: 650px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 15px;
+
+    border-radius: 12px;
+
+    background: #303342;
+
+    border: 1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+.search-box span {
+    color: #999dab;
+
+    font-size: 22px;
+
+    margin-right: 10px;
+}
+
+.search-box input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.search-box input::placeholder {
+    color: #777b8b;
+}
+
+.search-box button {
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* User */
+
+.user-menu {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #b8bbc7;
+
+    font-size: 12px;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffc72c;
+
+    color: #252836;
+
+    font-weight: 700;
+}
+
+
+/* ============================
+   BODY
+============================ */
+
+.drive-body {
+    display: flex;
+
+    min-height: calc(100vh - 72px);
+}
+
+
+/* ============================
+   SIDEBAR
+============================ */
+
+.sidebar {
+    width: 230px;
+
+    padding: 25px 15px;
+
+    border-right: 1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* New button */
+
+.new-button {
+    width: 100%;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ffc72c;
+
+    color: #252836;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-bottom: 25px;
+}
+
+.new-button span {
+    font-size: 20px;
+}
+
+
+/* Navigation */
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.sidebar nav button {
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #9b9eac;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.sidebar nav button:hover {
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+}
+
+.sidebar nav button.active {
+    background: rgba(255, 199, 44, 0.10);
+
+    color: #ffc72c;
+}
+
+
+/* Storage */
+
+.storage-section {
+    margin-top: auto;
+
+    padding: 25px 12px;
+}
+
+.storage-title {
+    font-size: 11px;
+
+    color: #777b8b;
+
+    margin-bottom: 12px;
+}
+
+.storage-bar {
+    height: 5px;
+
+    background: #363946;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.storage-bar div {
+    width: 5%;
+
+    height: 100%;
+
+    background: #ffc72c;
+}
+
+.storage-section p {
+    color: #777b8b;
+
+    font-size: 10px;
+
+    margin-top: 9px;
+}
+
+
+/* ============================
+   MAIN CONTENT
+============================ */
+
+.drive-content {
+    flex: 1;
+
+    padding: 35px 45px;
+
+    overflow: auto;
+}
+
+
+/* Header */
+
+.content-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+.content-header h1 {
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 650;
+}
+
+.breadcrumb {
+    margin-top: 8px;
+
+    color: #777b8b;
+
+    font-size: 11px;
+}
+
+.view-button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #303342;
+
+    color: #aaa;
+
+    cursor: pointer;
+}
+
+
+/* ============================
+   FILES
+============================ */
+
+.files-section h2 {
+    color: #999dab;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+
+    margin-bottom: 15px;
+}
+
+.file-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(220px, 1fr));
+
+    gap: 15px;
+}
+
+
+/* Folder */
+
+.folder-card {
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    padding: 18px;
+
+    background: #292c3a;
+
+    border: 1px solid
+    rgba(255, 255, 255, 0.05);
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.folder-card:hover {
+    background: #303342;
+
+    border-color:
+            rgba(255, 199, 44, 0.20);
+
+    transform: translateY(-2px);
+}
+
+.folder-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255, 199, 44, 0.10);
+
+    font-size: 25px;
+
+    margin-right: 14px;
+}
+
+.folder-info h3 {
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.folder-info p {
+    margin: 5px 0 0;
+
+    color: #777b8b;
+
+    font-size: 10px;
+}
+
+.more-button {
+    position: absolute;
+
+    right: 12px;
+    top: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777b8b;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* ============================
+   MOBILE
+============================ */
+
+@media (max-width: 700px) {
+
+    .drive-header {
+        padding: 0 15px;
+    }
+
+    .drive-logo {
+        width: auto;
+    }
+
+    .drive-logo span {
+        display: none;
+    }
+
+    .user-menu span:not(.user-avatar) {
+        display: none;
+    }
+
+    .sidebar {
+        width: 65px;
+
+        padding: 20px 8px;
+    }
+
+    .new-button {
+        font-size: 0;
+    }
+
+    .new-button span {
+        font-size: 22px;
+    }
+
+    .sidebar nav button {
+        justify-content: center;
+
+        font-size: 0;
+    }
+
+    .sidebar nav button span {
+        font-size: 18px;
+    }
+
+    .storage-section {
+        display: none;
+    }
+
+    .drive-content {
+        padding: 25px 18px;
+    }
+}

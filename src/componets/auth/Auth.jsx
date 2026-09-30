@@ -1,16 +1,19 @@
-import React, { useState } from "react";
-import "../css/Auth.css"
-import folderIcon from "../assets/icons8-folder-96.png";
+import React, {useState} from "react";
+import "../../css/Auth.css"
+import folderIcon from "../../assets/icons8-folder-96.png";
+import {loginUser, registerUser} from "../../service/auth.js";
+import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
     const [isLogin, setIsLogin] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-
     const [form, setForm] = useState({
         username: "",
         email: "",
         password: "",
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setForm({
@@ -19,20 +22,19 @@ export default function Auth() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (isLogin) {
-            console.log("Login", {
-                email: form.email,
-                password: form.password,
 
-            });
-            alert("emal: "+form.email+ " password: "+ form.password);
+            await loginUser(form);
+            navigate("/home");
 
         } else {
-            console.log("Register", form);
-            alert("emal: "+form.email+ " username: "+ form.username + " password: "+ form.password);
+
+            const data = await registerUser(form);
+            alert("register successful with userID : " + data.id);
+
         }
     };
 
@@ -219,7 +221,7 @@ export default function Auth() {
 
                         <h2>
                             Your files.
-                            <br />
+                            <br/>
                             <span>Anywhere.</span>
                         </h2>
 
